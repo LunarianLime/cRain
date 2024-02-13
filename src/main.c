@@ -1,10 +1,11 @@
 /**
  * Rain - a random shell command thingy I made
- * Version: 1.0
+ * Version: 1.1
 **/
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <sys/ioctl.h>
 #include <time.h>
 #include <unistd.h>
@@ -98,13 +99,52 @@ int getWindowSize(int *rows, int *cols)
 void init(int argc, char *argv[])
 {
 	getWindowSize(&wsize.height, &wsize.width);	
-	printf("\33[?25l");
-	printf("\33[34m");
 	system("clear");
-	
-	if(argc == 1) return;
-	else if(argc == 2) rainSymbol = argv[1][0];
-	else exit(-1);
+	printf("\33[?25l");
+
+	printf("\33[34m");
+
+	for(int i = 1; i < argc; i++)
+	{
+		if(strcmp(argv[i], "-s") == 0 && i+1 < argc)
+		{
+			rainSymbol = argv[i+1][0];
+		}
+		if(strcmp(argv[i], "-c") == 0 && i+1 < argc)
+		{
+			int colour = atoi(argv[i+1]);
+
+			switch(colour)
+			{
+				case 0:
+					printf("\33[30m");
+					break;
+				case 1:
+					printf("\33[31m");
+					break;
+				case 2:
+					printf("\33[32m");
+					break;
+				case 3:
+					printf("\33[33m");
+					break;
+				case 4:
+					printf("\33[34m");
+					break;
+				case 5:
+					printf("\33[35m");
+					break;
+				case 6:
+					printf("\33[36m");
+					break;
+				case 7:
+					printf("\33[37m");
+					break;
+				default:
+					break;
+			}
+		}
+	}	
 }
 
 int main(int argc, char *argv[])
