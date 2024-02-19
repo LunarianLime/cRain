@@ -109,10 +109,12 @@ void init(int argc, char *argv[])
 		if(strcmp(argv[i], "-s") == 0 && i+1 < argc)
 		{
 			rainSymbol = argv[i+1][0];
+			i++;
 		}
-		if(strcmp(argv[i], "-c") == 0 && i+1 < argc)
+		else if(strcmp(argv[i], "-c") == 0 && i+1 < argc)
 		{
 			int colour = atoi(argv[i+1]);
+			i++;
 
 			switch(colour)
 			{
@@ -143,6 +145,32 @@ void init(int argc, char *argv[])
 				default:
 					break;
 			}
+		}
+		else if(strcmp(argv[i], "-h") == 0)
+		{
+			printf("\33[0m");
+			printf("rain <arg>\n\t");
+				       	printf("Argument list:\n");
+					printf("-h: display this message\n");
+					printf("-s <char>: char to use as a symbol for the rain particles\n\t");
+						printf("('|' by default)\n");
+					printf("-c <int>: changes the colour of rain\n\t");
+						printf("Blue by default\n\t");
+						printf("(1 - Black)\n\t");
+						printf("(2 - Red)\n\t");
+						printf("(3 - Green)\n\t");
+						printf("(4 - Yellow)\n\t");
+						printf("(5 - Blue)\n\t");
+						printf("(6 - Purpe)\n\t");
+						printf("(7 - Cyan)\n\t");
+						printf("(8 - White)\n\t");	
+			
+			exit(0);			
+		}
+		else 
+		{
+			printf("Unrecognized argument; use -h for a list of arguments\n");
+			exit(0);
 		}
 	}	
 }
