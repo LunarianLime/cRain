@@ -1,6 +1,6 @@
 /**
  * Rain - a random shell command thingy I made
- * Version: 1.1
+ * Version: 1.0
 **/
 
 #include <stdio.h>
@@ -156,14 +156,13 @@ void init(int argc, char *argv[])
 						printf("('|' by default)\n");
 					printf("-c <int>: changes the colour of rain\n\t");
 						printf("Blue by default\n\t");
-						printf("(1 - Black)\n\t");
-						printf("(2 - Red)\n\t");
-						printf("(3 - Green)\n\t");
-						printf("(4 - Yellow)\n\t");
-						printf("(5 - Blue)\n\t");
-						printf("(6 - Purpe)\n\t");
-						printf("(7 - Cyan)\n\t");
-						printf("(8 - White)\n\t");	
+						printf("(1 - Red)\n\t");
+						printf("(2 - Green)\n\t");
+						printf("(3 - Yellow)\n\t");
+						printf("(4 - Blue)\n\t");
+						printf("(5 - Purple)\n\t");
+						printf("(6 - Cyan)\n\t");
+						printf("(7 - White)\n\t");
 			
 			exit(0);			
 		}
