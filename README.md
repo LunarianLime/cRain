@@ -21,5 +21,5 @@ Usage:
 ```
 ./rain -h: displays all available commands
 ./rain -s <char>: will use <char> to represent the rain particles
-.rain -c [1..7]: will use the corresponding colour
+./rain -c [1..7]: will use the corresponding colour
 ```
