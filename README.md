@@ -1,6 +1,5 @@
 A fun and simple CLI command written in C.
 
-![Blue rain particles travelling down the screen](assets/rain.gif)
+<img src="assets/rain.gif" alt="Blue rain particles travelling down the screen" width=100>
 
-
-![White snow particles floating down the screen](assets/snow.gif)
+<img src="assets/snow.gif" alt="White snow particles floating down the screen">
